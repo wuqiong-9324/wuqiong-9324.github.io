@@ -3,7 +3,10 @@ window.onload = function () {
         type: "GET",
         url: '../db/index.json',
         success: function (data) {
-            console.log(data);
+            data.forEach(item => {
+                var str = `<div class="grid-item"><img src="${item.preview}" alt="" /></div>`;
+                $('.grid').append(str);
+            })
         }
     })
 }
