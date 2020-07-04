@@ -1,12 +1,2 @@
-window.onload = function () {
-    $.ajax({
-        type: "GET",
-        url: '../db/index.json',
-        success: function (data) {
-            data.forEach(item => {
-                var str = `<div class="grid-item"><img src="${item.preview}" alt="" /></div>`;
-                $('.grid').append(str);
-            })
-        }
-    })
-}
+window.onload=function(){$.ajax({url:"../lib/list.json",success:function(data){data.forEach(function(item){var str='<li class="item"><a href="/achive.html?aId='+item.aId+'"><img src="'+item.preview+'" alt="" /><div class="title"><div class="left">'+item.title+'</div><div class="right">查看详情 ></div></div></a></li>';$("#masonry").append(str)})}})};
+/*! qx 最后修改于： 2020-07-05 */
